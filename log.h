@@ -2,7 +2,7 @@
 #include <string>
 
 enum LogLevel {
-	ERROR,
+	ERR,
 	WARNING,
 	INFO,
 	FATAL,
@@ -26,7 +26,7 @@ inline void log_message(int32_t level, Args... args) {
 }
 template<typename... Args>
 inline void log_error(Args... args) {
-	log_message(LogLevel::ERROR, static_cast<Args&&>(args)...);
+	log_message(LogLevel::ERR, static_cast<Args&&>(args)...);
 }
 template<typename... Args>
 inline void log_warning(Args... args) {
